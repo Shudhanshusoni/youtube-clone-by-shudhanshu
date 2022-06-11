@@ -50,14 +50,16 @@ body{
     display:flex;
     justify-content:space-evenly;
     align-items:center;
-}#videodiv{
+}
+#videodiv{
     margin-top: 50px;
-}.mons{
+}
+.mons{
     width: 450px;
     height:  300px;
     margin: 20px;
 }
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 100%) {
    #end i,#logo i{
        display: none;
    }#end i:nth-child(5){
