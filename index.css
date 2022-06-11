@@ -59,10 +59,11 @@ body{
     height:  300px;
     margin: 20px;
 }
-@media screen and (max-width: 100%) {
+@media screen and (max-width: 650px) {
    #end i,#logo i{
        display: none;
-   }#end i:nth-child(5){
+   }
+   #end i:nth-child(5){
        display: block;
    }
    #logo img{

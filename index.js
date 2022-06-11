@@ -1,38 +1,11 @@
-/*
 
-Need 2 Things:
-(1) Show/Display Videos on Homepage
-(2) Search When Something is typed in the search-box
-
-
-display()
-- Show/Display Videos on Homepage
-- Based Upon Most Popular Videos
-- Should be Called Directly WITHOUT Any Event 
-(No Hover, No Click , No On Click)
-- On Page Load
-
-
-
-searchVideo()
-- Search When Something is typed in the search-box
-- Take the "String" typed in search-box and search on that string 
-
-
-*/
 
 let div = document.getElementById("videodiv");
 
-
-// (1) Show/Display Videos on Homepage
-
-
-
 async function display(){
 
-    // q = Popular Videos --> Popular%20Videos (%20 -> Space)
-
-    let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=popular%20videos&key=AIzaSyAHhQQnbSWN4vuAb2SZe8UJMKW3nc5FH-M&maxResults=25`);
+   
+    let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=popular%20videos&key=AIzaSyAHhQQnbSWN4vuAb2SZe8UJMKW3nc5FH-M&maxResults=10`);
 
     let data = await res.json();
     
@@ -50,16 +23,11 @@ async function display(){
 display();
 
 
-
-
-// (2) Search When Something is typed in the search-box
-
 async function searchVideos(){
-    document.getElementById("videodiv").innerHTML=""; // Empty 
+    document.getElementById("videodiv").innerHTML=""; 
 
-    let query = document.getElementById("video").value; // Search String/ Query String
+    let query = document.getElementById("video").value;
 
-//search for videos
 let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=${query}&type=video&key=AIzaSyAHhQQnbSWN4vuAb2SZe8UJMKW3nc5FH-M&maxResults=25`);
 let data = await res.json();
 
